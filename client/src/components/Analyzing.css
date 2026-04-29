@@ -1,0 +1,15 @@
+.an-wrap  { display: flex; justify-content: center; align-items: center; min-height: 50vh; }
+.an-card  { background: var(--surf); border: 1px solid var(--border); border-radius: var(--rL); padding: 52px 44px; text-align: center; max-width: 440px; width: 100%; position: relative; animation: up .4s ease; }
+.an-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.an-ring  { position: absolute; border-radius: 50%; border: 1px solid rgba(124,92,255,.18); animation: expand 3s ease-out infinite; }
+.r1 { width: 110px; height: 110px; }
+.r2 { width: 170px; height: 170px; animation-delay: 1s; }
+.r3 { width: 230px; height: 230px; animation-delay: 2s; }
+.an-bolt  { font-size: 44px; margin-bottom: 18px; display: block; animation: float 3s ease-in-out infinite; position: relative; }
+.an-card h2 { font-family: "Syne", sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 7px; }
+.an-vid { color: var(--muted); font-size: 12px; font-style: italic; margin-bottom: 26px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.an-prog-row   { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.an-prog-track { flex: 1; height: 5px; background: var(--surf2); border-radius: 100px; overflow: hidden; }
+.an-prog-fill  { height: 100%; background: linear-gradient(90deg,var(--accent),var(--accent2)); border-radius: 100px; transition: width .35s cubic-bezier(.4,0,.2,1); }
+.an-prog-pct   { font-family: "Syne", sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); min-width: 32px; }
+.an-label      { font-size: 12px; color: var(--muted); }

@@ -1,0 +1,70 @@
+.clip-card {
+  background: var(--surf); border: 1px solid var(--border);
+  border-radius: var(--rL); overflow: hidden;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  animation: up .4s ease both;
+}
+.clip-card:hover { transform: translateY(-3px); border-color: var(--borderB); box-shadow: 0 14px 36px rgba(0,0,0,.3); }
+
+/* ── preview ── */
+.clip-preview-wrap { position: relative; }
+
+.clip-preview            { position: relative; background: #000; overflow: hidden; }
+.clip-preview.portrait   { aspect-ratio: 9/16; max-height: 420px; }
+.clip-preview.landscape  { aspect-ratio: 16/9; }
+.clip-preview.square     { aspect-ratio: 1/1;  max-height: 340px; }
+.clip-preview iframe { width: 100%; height: 100%; border: none; display: block; position: absolute; inset: 0; }
+
+.clip-thumb      { width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer; transition: transform .3s; }
+.clip-thumb:hover{ transform: scale(1.02); }
+.clip-thumb-over { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,.82) 100%); pointer-events: none; }
+
+.clip-rank        { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,.75); border: 1px solid rgba(255,255,255,.2); border-radius: 8px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-family: "Syne",sans-serif; font-weight: 800; font-size: 13px; z-index: 4; }
+.clip-orient-badge{ position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.15); border-radius: 6px; padding: 3px 8px; font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; z-index: 4; }
+.clip-time-badge  { position: absolute; bottom: 48px; left: 12px; z-index: 4; background: rgba(0,0,0,.8); border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 600; }
+.clip-play-btn    { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,.18); border: 2px solid rgba(255,255,255,.7); display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; transition: all .2s; backdrop-filter: blur(12px); }
+.clip-play-btn:hover { background: rgba(255,255,255,.32); transform: translate(-50%,-50%) scale(1.1); }
+
+.clip-captions { position: absolute; bottom: 8px; left: 0; right: 0; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0 10px; }
+.clip-cap-line { background: rgba(0,0,0,.92); padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-align: center; max-width: 92%; }
+
+/* ── download overlay ── */
+.dl-overlay { position: absolute; inset: 0; z-index: 10; background: rgba(7,8,17,.88); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; backdrop-filter: blur(6px); }
+.dl-icon    { font-size: 36px; animation: float 1.2s ease-in-out infinite; }
+.dl-title   { font-family: "Syne",sans-serif; font-size: 16px; font-weight: 700; }
+.dl-track   { width: 200px; height: 4px; background: rgba(255,255,255,.1); border-radius: 100px; overflow: hidden; }
+.dl-fill    { height: 100%; background: linear-gradient(90deg,var(--accent),var(--accent2)); border-radius: 100px; transition: width .4s ease; }
+.dl-status  { font-size: 12px; color: var(--muted); }
+.dl-pct     { font-family: "Syne",sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); }
+
+/* ── body ── */
+.clip-body  { padding: 18px; }
+.clip-top   { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
+.clip-title { font-family: "Syne",sans-serif; font-size: 15px; font-weight: 700; line-height: 1.3; }
+.viral-score{ display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.score-ring { width: 48px; height: 48px; border-radius: 50%; border: 2.5px solid; display: flex; align-items: center; justify-content: center; font-family: "Syne",sans-serif; font-weight: 800; font-size: 14px; }
+.score-lbl  { font-size: 9px; color: var(--muted); margin-top: 2px; letter-spacing: .05em; text-transform: uppercase; }
+
+.clip-hook  { font-size: 12px; font-style: italic; color: #A78BFA; margin-bottom: 9px; line-height: 1.5; }
+.clip-summary { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+
+.clip-meta   { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.emotion-tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 100px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.platform-tag{ display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 100px; font-size: 10px; font-weight: 600; background: var(--surf2); border: 1px solid var(--borderB); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+.clip-details { margin-bottom: 14px; }
+.detail-section { margin-bottom: 12px; }
+.detail-label   { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
+.caption-item   { background: var(--surf2); border: 1px solid var(--border); border-radius: 7px; padding: 5px 11px; font-size: 12px; margin-bottom: 4px; }
+.cta-text       { font-size: 12px; color: var(--accent); font-style: italic; }
+
+.clip-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+.clip-tag  { font-size: 11px; color: var(--accent); background: rgba(124,92,255,.1); border-radius: 100px; padding: 3px 9px; font-weight: 500; }
+
+.clip-actions { display: flex; gap: 8px; }
+.action-btn   { flex: 1; padding: 10px 14px; border-radius: 9px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s; border: none; font-family: "DM Sans",sans-serif; }
+.action-btn.outline { background: var(--surf2); border: 1px solid var(--borderB); color: var(--text); }
+.action-btn.outline:hover { border-color: rgba(255,255,255,.28); }
+.action-btn.primary { background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #fff; }
+.action-btn.primary:hover:not(:disabled) { box-shadow: 0 5px 18px rgba(124,92,255,.4); transform: translateY(-1px); }
+.action-btn.primary:disabled { opacity: .5; cursor: not-allowed; transform: none; }
