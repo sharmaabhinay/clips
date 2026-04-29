@@ -13,6 +13,11 @@ app.use(express.json());
 // ─── API ─────────────────────────────────────────────────────────────────────
 app.use("/api", apiRouter);
 
+// Root health endpoint for deployment checks
+app.get("/", (_, res) => {
+  res.send("hello world");
+});
+
 // ─── Serve built frontend (production) ───────────────────────────────────────
 const clientDist = path.join(__dirname, "../../client/dist");
 app.use(express.static(clientDist));
