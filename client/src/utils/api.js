@@ -1,4 +1,4 @@
-const BASE = "/api";
+const BASE = "https://clips-blue-nine.vercel.app/api";
 
 /**
  * Fetch video metadata from the backend (which uses yt-dlp).
