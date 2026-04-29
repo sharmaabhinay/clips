@@ -1,4 +1,4 @@
-const BASE = "https://clips-blue-nine.vercel.app/api";
+const BASE = import.meta.env.VITE_API_BASE || "/api";
 
 /**
  * Fetch video metadata from the backend (which uses yt-dlp).
